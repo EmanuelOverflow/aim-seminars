@@ -1,0 +1,493 @@
+/* ===========================================================
+   Intelligenza Artificiale Multidisciplinare — stile condiviso
+   =========================================================== */
+
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-text: #1c1c1e;
+  --color-text-muted: #5a5a5e;
+  --color-primary: #1b2a4a;   /* blu accademico profondo */
+  --color-primary-dark: #101b33;
+  --color-accent: #b5843c;    /* oro/ottone, richiamo accademico */
+  --color-border: #e4e1da;
+  --color-tag-bg: #eef1f7;
+  --color-tag-text: #1b2a4a;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --max-width: 960px;
+  --radius: 10px;
+  --shadow-sm: 0 1px 3px rgba(20, 20, 30, 0.06);
+  --shadow-md: 0 6px 24px rgba(20, 20, 30, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-accent); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  background: var(--color-primary);
+  color: #fff;
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.brand .title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: var(--color-accent);
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero .eyebrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.25;
+  margin: 0 0 16px;
+  color: var(--color-primary);
+}
+
+.hero p.lead {
+  font-size: 1.08rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 56px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-heading h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.section-heading .count {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Ciclo cards (homepage) ---------- */
+
+.ciclo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.ciclo-grid .ciclo-card:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .ciclo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ciclo-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ciclo-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.ciclo-card .status {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+}
+
+.ciclo-card .status.concluso {
+  background: #f1ede4;
+  color: #7a6a45;
+}
+
+.ciclo-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.ciclo-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.ciclo-card .meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.ciclo-card .card-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.ciclo-card .card-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---------- Seminar list (ciclo pages) ---------- */
+
+.seminar-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.seminar-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.seminar-item:first-child {
+  padding-top: 0;
+}
+
+.seminar-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.seminar-item .seminar-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  line-height: 1.5;
+}
+
+.seminar-item .seminar-content {
+  min-width: 0;
+}
+
+.seminar-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--color-text);
+}
+
+.seminar-item .speaker {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.seminar-item .description {
+  font-size: 0.96rem;
+  color: var(--color-text);
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.seminar-item .bio {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.seminar-item .bio strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.seminar-item .tags {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.seminar-item .tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .seminar-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.empty-state {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Ciclo page header ---------- */
+
+.ciclo-hero {
+  padding: 48px 0 36px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+.breadcrumb a { color: var(--color-text-muted); }
+.breadcrumb a:hover { color: var(--color-primary); }
+
+.ciclo-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+
+.ciclo-hero .tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-accent);
+  max-width: 700px;
+  margin: 0 0 16px;
+}
+
+.ciclo-hero .subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.ciclo-info {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.ciclo-info strong {
+  color: var(--color-text);
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+/* ---------- Partners ---------- */
+
+.partners {
+  padding: 48px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.partners .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.partner-logo {
+  height: 72px;
+  width: auto;
+}
+
+@media (max-width: 500px) {
+  .partners .container {
+    justify-content: center;
+  }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 32px 0;
+  margin-top: 40px;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.site-footer a { color: var(--color-text-muted); }
+.site-footer a:hover { color: var(--color-primary); }
+
+@media (max-width: 600px) {
+  .site-header .container { flex-direction: column; align-items: flex-start; }
+  .ciclo-info { gap: 16px; }
+}
