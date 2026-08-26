@@ -329,14 +329,17 @@ a:hover { color: var(--color-accent); }
   font-weight: 600;
 }
 
-.seminar-item .tags {
-  margin-top: 14px;
+.tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.seminar-item .tag {
+.seminar-item .tags {
+  margin-top: 14px;
+}
+
+.tag {
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -401,6 +404,19 @@ a:hover { color: var(--color-accent); }
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+}
+
+.topics {
+  margin-top: 20px;
+}
+
+.topics .topics-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
 }
 
 .ciclo-info {
